@@ -1,0 +1,41 @@
+{
+    "name": "Tiara Novita Sari",
+    "age": 18,
+    "gender": "Perempuan",
+    "hobi": [
+        "Masak",
+        "Musik",
+        "Traveling"
+    ],
+    "github": {
+        "username": "Tiaraa001",
+        "repository": 100
+    },
+    "articles": [
+        {
+            "id": 1,
+            "title": "Flutter: Introduction",
+            "subtitle": "Beatiful native apps with Dart language"
+        },
+        {
+            "id": 2,
+            "title": "Flutter: LinearLayout",
+            "subtitle": "How to design LinearLayout in Flutter"
+        },
+        {
+            "id": 2,
+            "title": "Flutter: RelativeLayout",
+            "subtitle": "How to design RelativeLayout in Flutter"
+        }
+    ],
+    "contact": {
+        "1": {
+            "name": "Personal",
+            "phone": "87399649243"
+        },
+        "2": {
+            "name": "Work",
+            "phone": "0834070327"
+        }
+    }
+}
