@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:parsing_ujikom/sample_json.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:parsing_ujikom/profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: MyHomePage(),
+      home: profilePage(),
     );
   }
 }
@@ -62,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Container(
                       height: 50,
                       width: 150,
-                      color: Colors.grey,
+                      color: Colors.yellow,
                       alignment: Alignment.center,
                       child: const Text("Read JSON File"),
                     ),
