@@ -1,197 +1,225 @@
 import 'dart:convert';
-
+import 'package:flutter/services.dart';
 import 'package:parsing_ujikom/sample_json.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:parsing_ujikom/profile.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: profilePage(),
-    );
-  }
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class profilePage extends StatefulWidget {
-  const profilePage({Key? key}) : super(key: key);
+class _ProfilePageState extends State<ProfilePage> {
+  late String _nama = "";
+  late String _umur = "";
+  late String _usergithub = "";
+  late String _repogithub = "";
+  List _hobi = [];
+  List<Article> _articles = [];
 
-  @override
-  State<profilePage> createState() => _profilePageState();
-}
-
-class _profilePageState extends State<profilePage> {
   Future _loadSampleJson() async {
     String jsonString = await rootBundle.loadString("assets/sample.json");
     final jsonData = json.decode(jsonString);
     Sample sample = Sample.fromJson(jsonData);
+
     setState(() {
-      // _jsonContent = sample.toString();
-      _name = sample.name.toString();
-      _age = sample.age.toString();
-      _gender = sample.gender.toString();
-      _hobi = sample.hobi.toString();
-      _github = sample.github.toString();
-      _articles = sample.articles.toString();
-      _contact = sample.contact.toString();
+      _nama = sample.name.toString();
+      _umur = sample.age.toString();
+      _usergithub = sample.github!.username.toString();
+      _repogithub = sample.github!.repository.toString();
+      _hobi = sample.hobi!.toList();
+      _articles = sample.articles!.toList();
     });
   }
 
-  // late String _jsonContent = "";
-  late String _name = "";
-  late String _age = "";
-  late String _gender = "";
-  late String _hobi = "";
-  late String _github = "";
-  late String _articles = "";
-  late String _contact = "";
+  void initState() {
+    _loadSampleJson();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Read Json'),
+        title: Center(child: Text('Parsing Json')),
+        backgroundColor: Colors.black,
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      _loadSampleJson();
-                    },
-                    child: Container(
-                      height: 50,
-                      width: 150,
+      body: Container(
+        color: Colors.blueAccent,
+        margin: EdgeInsets.all(20),
+        child: ListView(
+          children: [
+            Card(
+              margin: EdgeInsets.all(20),
+              color: Colors.pink,
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [Colors.black, Colors.yellowAccent]),
+                  boxShadow: [
+                    BoxShadow(
                       color: Colors.grey,
-                      alignment: Alignment.center,
-                      child: const Text("Read JSON File"),
-                    ),
+                      spreadRadius: 1,
+                      blurRadius: 5,
+                      offset: Offset(0, 1), // changes position of shadow
+                    )
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(40),
+                  child: Container(
+                    child: Center(
+                        child: Text(
+                      "Nama : \n" + _nama,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white, fontSize: 30.0),
+                    )),
                   ),
-                ],
-              ),
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 12.0),
-              //   child: Text(
-              //     _jsonContent,
-              //     textAlign: TextAlign.center,
-              //   ),
-              // ),
-              Container(
-                width: 350,
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.all(10),
-                color: Colors.pink,
-                child: Column(
-                  children: [
-                    Text(
-                      "Nama : " + _name,
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
                 ),
               ),
-              Container(
-                width: 350,
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.all(10),
-                color: Colors.pink,
-                child: Column(
-                  children: [
-                    Text(
-                      "Umur : " + _age,
-                      textAlign: TextAlign.center,
-                    ),
+            ),
+            Card(
+              margin: EdgeInsets.all(20),
+              color: Colors.lightBlueAccent,
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient:
+                      LinearGradient(colors: [Colors.black, Colors.redAccent]),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 1,
+                      blurRadius: 5,
+                      offset: Offset(0, 1), // changes position of shadow
+                    )
                   ],
                 ),
-              ),
-              Container(
-                width: 350,
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.all(10),
-                color: Colors.pink,
-                child: Column(
-                  children: [
-                    Text(
-                      "Jenis Kelamin : " + _gender,
+                child: Padding(
+                  padding: const EdgeInsets.all(40),
+                  child: Container(
+                    child: Center(
+                        child: Text(
+                      "Umur : \n" + _umur + " Tahun",
                       textAlign: TextAlign.center,
-                    ),
-                  ],
+                      style: TextStyle(color: Colors.white, fontSize: 30.0),
+                    )),
+                  ),
                 ),
               ),
-              Container(
-                width: 350,
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.all(10),
-                color: Colors.pink,
-                child: Column(
-                  children: [
-                    Text(
-                      "Hobi : " + _hobi,
-                      textAlign: TextAlign.center,
-                    ),
+            ),
+            Card(
+              margin: EdgeInsets.all(20),
+              color: Colors.lightBlueAccent,
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient:
+                      LinearGradient(colors: [Colors.black, Colors.green]),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 1,
+                      blurRadius: 5,
+                      offset: Offset(0, 1), // changes position of shadow
+                    )
                   ],
                 ),
-              ),
-              Container(
-                width: 350,
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.all(10),
-                color: Colors.pink,
-                child: Column(
-                  children: [
-                    Text(
-                      "Github : " + _github,
+                child: Padding(
+                  padding: const EdgeInsets.all(40),
+                  child: Container(
+                    child: Center(
+                        child: Text(
+                      "Github : " +
+                          _usergithub +
+                          "\n Repository : " +
+                          _repogithub,
                       textAlign: TextAlign.center,
-                    ),
-                  ],
+                      style: TextStyle(color: Colors.white, fontSize: 30.0),
+                    )),
+                  ),
                 ),
               ),
-               Container(
-                width: 350,
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.all(10),
-                color: Colors.pink,
-                child: Column(
-                  children: [
-                    Text(
-                      "Article : " + _articles,
-                      textAlign: TextAlign.center,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+              height: MediaQuery.of(context).size.height * 0.30,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: _hobi.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    child: Card(
+                      color: Colors.lightBlueAccent,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Colors.black, Colors.pink]),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              spreadRadius: 1,
+                              blurRadius: 5,
+                              offset:
+                                  Offset(0, 1), // changes position of shadow
+                            )
+                          ],
+                        ),
+                        child: Center(
+                            child: Text(
+                          _hobi[index].toString(),
+                          style: TextStyle(color: Colors.white, fontSize: 30.0),
+                        )),
+                      ),
                     ),
-                  ],
-                ),
+                  );
+                },
               ),
-               Container(
-                width: 350,
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.all(10),
-                color: Colors.pink,
-                child: Column(
-                  children: [
-                    Text(
-                      "Contact : " + _contact,
-                      textAlign: TextAlign.center,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+              height: MediaQuery.of(context).size.height * 0.30,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: _articles.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    child: Card(
+                      color: Colors.lightBlueAccent,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: [Colors.black, Colors.pink]),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              spreadRadius: 1,
+                              blurRadius: 5,
+                              offset:
+                                  Offset(0, 1), // changes position of shadow
+                            )
+                          ],
+                        ),
+                        child: Center(
+                            child: Text(
+                          _articles[index].id.toString() +
+                          "\n" +
+                          _articles[index].title +
+                          " " +
+                          _articles[index].subtitle,
+                          style:
+                            TextStyle(color:Colors.white),
+                                        ),
+                                        ),
+                      ),
                     ),
-                  ],
-                ),
+                  );
+                },
               ),
-              
-            ],
-          ),
+            ),
+            
+          ],
         ),
       ),
     );
