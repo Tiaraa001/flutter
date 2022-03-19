@@ -17,6 +17,7 @@ class _ProfilePageState extends State<ProfilePage> {
   late String _repogithub = "";
   List _hobi = [];
   List<Article> _articles = [];
+  List<Contact> _contact = [];
 
   Future _loadSampleJson() async {
     String jsonString = await rootBundle.loadString("assets/sample.json");
@@ -29,7 +30,8 @@ class _ProfilePageState extends State<ProfilePage> {
       _usergithub = sample.github!.username.toString();
       _repogithub = sample.github!.repository.toString();
       _hobi = sample.hobi!.toList();
-      _articles = sample.articles!.toList();
+      _articles = sample.articles.toList();
+      _contact = sample.contact.toList();
     });
   }
 
