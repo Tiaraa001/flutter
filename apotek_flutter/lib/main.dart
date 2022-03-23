@@ -1,5 +1,8 @@
+import 'package:apotek_flutter/screens/user_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
+import 'controller_bindings.dart';
 import 'main_screen.dart';
 import 'profile_screen.dart';
 import 'home.dart';
@@ -12,10 +15,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      initialBinding: ControllerBindings(),
       debugShowCheckedModeBanner:false,
       home:SplashScreenView(
-        navigateRoute:MainScreen(),
+        navigateRoute:UserScreen(),
         duration:4000,
         imageSize: 200,
         imageSrc:"assets/img/1.png",

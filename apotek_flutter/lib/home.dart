@@ -7,9 +7,10 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home'),
         centerTitle: true,
-        backgroundColor: Colors.green.shade100,
+        backgroundColor: Colors.green.shade700,
       ),
       body: Container(
+          color: Colors.green.shade300,
           child: Column(children: <Widget>[
         Padding(
             padding: EdgeInsets.fromLTRB(0, 80, 0, 0),
@@ -18,7 +19,7 @@ class Home extends StatelessWidget {
         Padding(
           padding: EdgeInsets.fromLTRB(0, 0, 0, 80),
           child: Image.asset(
-            'assets/images/apotek.jpg',
+            'assets/img/apotek.jpg',
             height: 200,
             width: 300,
           ),
