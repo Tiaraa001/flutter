@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 import 'main_screen.dart';
+import 'profile_screen.dart';
+import 'home.dart';
 
 void main(){
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
         duration:4000,
         imageSize: 200,
         imageSrc:"assets/img/1.png",
-        backgroundColor:Colors.green
+        backgroundColor:Colors.green.shade300
       ),
     );
   }

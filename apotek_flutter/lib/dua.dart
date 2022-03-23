@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Satu extends StatelessWidget {
+class Tiga extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Data Kategori'),
+        title: Text('Data Satuan'),
         centerTitle: true,
         backgroundColor: Colors.green.shade800,
       ),
@@ -25,33 +25,32 @@ class Satu extends StatelessWidget {
                 ),
                 child: DataTable(
                   columns: const <DataColumn>[
-                    DataColumn(label: Text("Nama Kategori")),
+                    DataColumn(label: Text("Nama Satuan")),
                   ],
                   rows: const <DataRow>[
                     DataRow(
                       cells: const <DataCell>[
-                        DataCell(Text("Alat Kesahatan")),
+                        DataCell(Text("Pcs")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
-                        DataCell(Text("Alat Kesahatan")),
+                        DataCell(Text("Pcs")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
-                        DataCell(Text("Alat Kesahatan")),
+                        DataCell(Text("Pcs")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
-                        DataCell(Text("Obat")),
+                        DataCell(Text("Kaplet")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
-                        DataCell(Text("Obat")),
-
+                        DataCell(Text("Kaplet")),
                       ],
                     ),
                     // DataRow(

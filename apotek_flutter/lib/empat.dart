@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Satu extends StatelessWidget {
+class Empat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Data Kategori'),
+        title: Text('Data Barang'),
         centerTitle: true,
         backgroundColor: Colors.green.shade800,
       ),
@@ -25,33 +25,44 @@ class Satu extends StatelessWidget {
                 ),
                 child: DataTable(
                   columns: const <DataColumn>[
-                    DataColumn(label: Text("Nama Kategori")),
+                    DataColumn(label: Text("Name")),
+                    DataColumn(label: Text("Email")),
+                    DataColumn(label: Text("Role")),
                   ],
                   rows: const <DataRow>[
                     DataRow(
                       cells: const <DataCell>[
-                        DataCell(Text("Alat Kesahatan")),
+                        DataCell(Text("Tiara Novita Sari")),
+                        DataCell(Text("tiara@gmail.com")),
+                        DataCell(Text("Admin")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
-                        DataCell(Text("Alat Kesahatan")),
+                        DataCell(Text("Adya Eka Amelia")),
+                        DataCell(Text("adya@gmail.com")),
+                        DataCell(Text("Kasir")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
-                        DataCell(Text("Alat Kesahatan")),
+                        DataCell(Text("Ike Vadila")),
+                        DataCell(Text("ike@gmail.com")),
+                        DataCell(Text("Kasir")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
-                        DataCell(Text("Obat")),
+                        DataCell(Text("Fitriyani Putri")),
+                        DataCell(Text("fitri@gmail.com")),
+                        DataCell(Text("Kasir")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
-                        DataCell(Text("Obat")),
-
+                        DataCell(Text("Hafsya Keika Mumtazah")),
+                        DataCell(Text("hafsya@gmail.com")),
+                        DataCell(Text("Kasir")),
                       ],
                     ),
                     // DataRow(

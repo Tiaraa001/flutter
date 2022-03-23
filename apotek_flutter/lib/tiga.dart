@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Satu extends StatelessWidget {
+class Dua extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Data Kategori'),
+        title: Text('Data Barang'),
         centerTitle: true,
         backgroundColor: Colors.green.shade800,
       ),
@@ -26,32 +26,55 @@ class Satu extends StatelessWidget {
                 child: DataTable(
                   columns: const <DataColumn>[
                     DataColumn(label: Text("Nama Kategori")),
+                    DataColumn(label: Text("Nama Barang")),
+                    DataColumn(label: Text("Nama Satuan")),
+                    DataColumn(label: Text("Stok")),
+                    DataColumn(label: Text("Harga")),
                   ],
                   rows: const <DataRow>[
                     DataRow(
                       cells: const <DataCell>[
                         DataCell(Text("Alat Kesahatan")),
+                        DataCell(Text("Suntikan")),
+                        DataCell(Text("Pcs")),
+                        DataCell(Text("20")),
+                        DataCell(Text("6000")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
                         DataCell(Text("Alat Kesahatan")),
+                        DataCell(Text("Perban")),
+                        DataCell(Text("Pcs")),
+                        DataCell(Text("20")),
+                        DataCell(Text("6000")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
                         DataCell(Text("Alat Kesahatan")),
+                        DataCell(Text("Betadin")),
+                        DataCell(Text("Pcs")),
+                        DataCell(Text("20")),
+                        DataCell(Text("6000")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
                         DataCell(Text("Obat")),
+                        DataCell(Text("Oskadon")),
+                        DataCell(Text("Pcs")),
+                        DataCell(Text("20")),
+                        DataCell(Text("1500")),
                       ],
                     ),
                      DataRow(
                       cells: const <DataCell>[
                         DataCell(Text("Obat")),
-
+                        DataCell(Text("Promagh")),
+                        DataCell(Text("Pcs")),
+                        DataCell(Text("20")),
+                        DataCell(Text("2000")),
                       ],
                     ),
                     // DataRow(
