@@ -1,4 +1,5 @@
 import 'package:apotek_flutter/screens/user_screen.dart';
+import 'package:apotek_flutter/screens/barang_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialBinding: ControllerBindings(),
       debugShowCheckedModeBanner:false,
       home:SplashScreenView(
-        navigateRoute:UserScreen(),
+        navigateRoute:BarangScreen(),
         duration:4000,
         imageSize: 200,
         imageSrc:"assets/img/1.png",
