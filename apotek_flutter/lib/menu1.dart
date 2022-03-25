@@ -1,3 +1,4 @@
+import 'package:apotek_flutter/screens/barang_screen.dart';
 import 'package:flutter/material.dart';
 import 'satu.dart';
 import 'dua.dart';
@@ -18,29 +19,29 @@ class Menu extends StatelessWidget {
       body: ListView(children: <Widget>[
         Column(
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 7, 10),
-              width: 450,
-              height: 90,
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                  child: Text(
-                    "Kategori",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Satu(),
-                        ));
-                  }),
-            ),
+            // Container(
+            //   padding: EdgeInsets.fromLTRB(10, 10, 7, 10),
+            //   width: 450,
+            //   height: 90,
+            //   child: TextButton(
+            //       style: TextButton.styleFrom(
+            //         backgroundColor: Colors.green,
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(20),
+            //         ),
+            //       ),
+            //       child: Text(
+            //         "Kategori",
+            //         style: TextStyle(fontSize: 20, color: Colors.white),
+            //       ),
+            //       onPressed: () {
+            //         Navigator.push(
+            //             context,
+            //             MaterialPageRoute(
+            //               builder: (context) => Satu(),
+            //             ));
+            //       }),
+            // ),
              Container(
               padding: EdgeInsets.fromLTRB(10, 10, 7, 10),
               width: 450,
@@ -61,57 +62,57 @@ class Menu extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Dua(),
+                          builder: (context) => BarangScreen(),
                         ));
                   }),
                   
             ),
-             Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 7, 10),
-              width: 450,
-              height: 90,
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                  child: Text(
-                    "Satuan",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Tiga(),
-                        ));
-                  }),
-            ),
-             Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 7, 10),
-              width: 450,
-              height: 90,
-              child: TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                  child: Text(
-                    "User",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Empat(),
-                        ));
-                  }),
-            ),
+            //  Container(
+            //   padding: EdgeInsets.fromLTRB(10, 10, 7, 10),
+            //   width: 450,
+            //   height: 90,
+            //   child: TextButton(
+            //       style: TextButton.styleFrom(
+            //         backgroundColor: Colors.green,
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(20),
+            //         ),
+            //       ),
+            //       child: Text(
+            //         "Satuan",
+            //         style: TextStyle(fontSize: 20, color: Colors.white),
+            //       ),
+            //       onPressed: () {
+            //         Navigator.push(
+            //             context,
+            //             MaterialPageRoute(
+            //               builder: (context) => Tiga(),
+            //             ));
+            //       }),
+            // ),
+            //  Container(
+            //   padding: EdgeInsets.fromLTRB(10, 10, 7, 10),
+            //   width: 450,
+            //   height: 90,
+            //   child: TextButton(
+            //       style: TextButton.styleFrom(
+            //         backgroundColor: Colors.green,
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(20),
+            //         ),
+            //       ),
+            //       child: Text(
+            //         "User",
+            //         style: TextStyle(fontSize: 20, color: Colors.white),
+            //       ),
+            //       onPressed: () {
+            //         Navigator.push(
+            //             context,
+            //             MaterialPageRoute(
+            //               builder: (context) => Empat(),
+            //             ));
+            //       }),
+            // ),
           ],
         ),
       ]),

@@ -20,11 +20,11 @@ class MyApp extends StatelessWidget {
       initialBinding: ControllerBindings(),
       debugShowCheckedModeBanner:false,
       home:SplashScreenView(
-        navigateRoute:BarangScreen(),
+        navigateRoute:MainScreen(),
         duration:4000,
         imageSize: 200,
-        imageSrc:"assets/img/1.png",
-        backgroundColor:Colors.green.shade300
+        imageSrc:"assets/img/ap.png",
+        backgroundColor:Colors.green
       ),
     );
   }

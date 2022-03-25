@@ -31,8 +31,7 @@ class BarangScreen extends StatelessWidget {
                         margin: EdgeInsets.only(bottom: 10, top: 10),
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [Colors.blueAccent, Colors.redAccent]),
+                              color: Colors.grey,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Column(
